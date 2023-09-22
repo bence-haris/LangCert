@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Language Certification Exam</h1>
+    <form action="/" method="post">
+    {% for question in questions %}
+
+            <h2>{{ question.title }}</h2>
+            <input type="checkbox" id="{{ question["id"] }}.0" name="{{ question["id"] }}.0" value="{{ question[orders[((loop.index)-1)][0]] }}">
+            <label for="{{ question["id"] }}.0">{{ question[orders[((loop.index)-1)][0]] }}</label><br>
+            <input type="checkbox" id="{{ question["id"] }}.1" name="{{ question["id"] }}.1" value="{{ question[orders[((loop.index)-1)][1]] }}">
+            <label for="{{ question["id"] }}.1">{{ question[orders[((loop.index)-1)][1]] }}</label><br>
+            <input type="checkbox" id="{{ question["id"] }}.2" name="{{ question["id"] }}.2" value="{{ question[orders[((loop.index)-1)][2]] }}">
+            <label for="{{ question["id"] }}.2">{{ question[orders[((loop.index)-1)][2]] }}</label><br>
+            <input type="checkbox" id="{{ question["id"] }}.3" name="{{ question["id"] }}.3" value="{{ question[orders[((loop.index)-1)][3]] }}">
+            <label for="{{ question["id"] }}.3">{{ question[orders[((loop.index)-1)][3]] }}</label><br>
+
+
+    {% endfor %}
+            <input type="submit" value="submit">
+        </form>
+</body>
+</html>
